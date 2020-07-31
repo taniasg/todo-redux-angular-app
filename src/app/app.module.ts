@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoModule } from './todos/todo.module';
 import { FooterComponent } from './footer/footer.component';
+
+import { APP_BASE_HREF } from '@angular/common';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -31,7 +33,7 @@ import { environment } from '../environments/environment';
       logOnly: environment.production
     }),
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
